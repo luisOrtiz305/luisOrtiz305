@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo Animado</title>
+    <style>
+        /* Importa la fuente Doto desde Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Doto', sans-serif;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #53354a);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            position: relative;
+            z-index: 10;
+            font-size: 5rem;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            position: relative;
+            z-index: 10;
+            font-size: 1.5rem;
+            margin-top: -20px;
+            color: #dcdcdc;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Fondo animado */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .car {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 10px;
+            animation: moveCar 5s linear infinite;
+        }
+
+        .car::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 15px;
+            width: 70px;
+            height: 30px;
+            background-color: #ff6666;
+            border-radius: 5px;
+        }
+
+        .wheel {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .wheel.left {
+            bottom: -10px;
+            left: 10px;
+        }
+
+        .wheel.right {
+            bottom: -10px;
+            right: 10px;
+        }
+
+        .car:nth-child(1) {
+            top: 20%;
+            left: -150px;
+            background-color: blue;
+            animation-delay: 0s;
+        }
+
+        .car:nth-child(2) {
+            top: 50%;
+            left: -150px;
+            background-color: green;
+            animation-delay: 2s;
+        }
+
+        .car:nth-child(3) {
+            top: 80%;
+            left: -150px;
+            background-color: yellow;
+            animation-delay: 4s;
+        }
+
+        @keyframes moveCar {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(110vw);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+    <h2>Este es mi primer commit</h2>
+    <div class="background">
+        <div class="car">
+            <div class="wheel left"></div>
+            <div class="wheel right"></div>
+        </div>
+        <div class="car">
+            <div class="wheel left"></div>
+            <div class="wheel right"></div>
+        </div>
+        <div class="car">
+            <div class="wheel left"></div>
+            <div class="wheel right"></div>
+        </div>
+    </div>
+</body>
+</html>
